@@ -33,7 +33,12 @@ function criaLinha(usuario) {
     tdTelefone.innerHTML = usuario.telefone
     tdEmail.innerHTML = usuario.email
     tdAtivo.innerHTML = usuario.ativo
-    tdDataNascimento.innerHTML = usuario.dataNascimento
+    data = new Date(usuario.dataNascimento)
+    dataFormatada = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+    tdDataNascimento.innerHTML = dataFormatada
+    
+    
+    
 
     tdBotoes.appendChild(buttonEdit);
     tdBotoes.appendChild(buttonRemove);
